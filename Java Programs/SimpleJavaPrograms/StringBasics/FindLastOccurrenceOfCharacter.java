@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class CheckPalindromeString {
+public class FindLastOccurrenceOfCharacter {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -9,15 +9,15 @@ public class CheckPalindromeString {
         System.out.println("Enter a String: ");
         String a = sc.nextLine();
 
-        String reverse = "";
+        System.out.println("Enter a Character: ");
+        char ch = sc.next().charAt(0);
 
         for (int i = a.length() - 1; i >= 0; i--) {
-            reverse = reverse + a.charAt(i);
-        }
-        if (a.equals(reverse)) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not a Palindrome: ");
+
+            if (a.charAt(i) == ch) {
+                System.out.println("Last Occurrence at index: " + i);
+                break;
+            }
         }
     }
 }
