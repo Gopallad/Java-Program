@@ -1,0 +1,36 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CheckElementSort {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Size of Array: ");
+
+        int n = sc.nextInt();
+
+        System.out.println("Enter Array: ");
+        int[] arr = new int[n];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+
+        boolean sorted = true;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                sorted = false;
+                break;
+            }
+        }
+        if (sorted) {
+            System.out.println("Arrays is sorted: ");
+        } else {
+            System.out.println("Arrays is not Sorted: ");
+        }
+    }
+}

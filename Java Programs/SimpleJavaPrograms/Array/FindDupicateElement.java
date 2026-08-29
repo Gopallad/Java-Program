@@ -1,12 +1,13 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class FindSum {
+public class FindDupicateElement {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter size of array: ");
+        System.out.println("Enter Size of Array: ");
         int n = sc.nextInt();
 
         System.out.println("Enter Array: ");
@@ -15,12 +16,16 @@ public class FindSum {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        int sum = 0;
+        System.out.println(Arrays.toString(arr));
+
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-            sum = sum + arr[i];
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    System.out.println("Duplicate: " + arr[i]);
+                }
+            }
         }
-        System.out.print("Sum Of digit : " + sum);
 
     }
 }
